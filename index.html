@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Liti 🎉</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Liti 🎉</title>
+<style>
     body {
       margin: 0;
       padding: 0;
@@ -21,21 +21,27 @@
       color: white;
     }
 
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Star Pattern Text (from C++ output) */
-    .pattern {
-      white-space: pre;
-      font-size: 16px;
-      line-height: 18px;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 40px;
-      animation: fadeIn 3s ease-in-out;
+    /* Star Pattern Text*/
+   .pattern {
+     white-space: pre;
+     font-size: 16px;
+     line-height: 1.2;
+     text-align: center;
+     margin-bottom: 40px;
+     font-weight: bold;
+     animation: blinkColors 2s infinite alternate;
     }
 
     @keyframes fadeIn {
@@ -43,56 +49,149 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Balloons */
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 60px;
-      height: 80px;
-      border-radius: 50% 50% 50% 50%;
-      background-color: red;
-      animation: float 10s linear infinite;
-    }
+    /* Balloons Design with animations*/
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  animation: float 12s infinite ease-in;
+}
 
-    .balloon:before {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      width: 2px;
-      height: 20px;
-      background: #fff;
-    }
+/* String of balloon */
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #fff;
+}
 
     @keyframes float {
       0% { transform: translateY(0) rotate(0); opacity: 1; }
       100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
     }
 
-    /* Different balloon colors */
+    
     .b1 { left: 10%; background: #ff7675; animation-duration: 9s; }
     .b2 { left: 30%; background: #55efc4; animation-duration: 11s; }
     .b3 { left: 50%; background: #ffeaa7; animation-duration: 13s; }
     .b4 { left: 70%; background: #74b9ff; animation-duration: 10s; }
     .b5 { left: 90%; background: #a29bfe; animation-duration: 12s; }
 
-    /* Birthday Wish Heading */
+    /* For the Birthday Wish Heading */
     h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-      animation: bounce 2s infinite;
+      font-size: 4rem;
+      font-weight: bold;
+      animation: wave 2s infinite ease-in-out, glow 3s infinite alternate;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes wave {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
     }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080; }
+      50% { text-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0; }
+      100% { text-shadow: 0 0 10px #ffd700, 0 0 30px #ffd700; }
+    }
+
+    /* For extra Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      animation: float 12s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* For blinkng of ASCII art stars in multiple colors */
+    pre {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: bold;
+      animation: blinkColors 2s infinite alternate;
+    }
+
+    @keyframes blinkColors {
+      0% { color: #ff0000; }
+      25% { color: #00ff00; }
+      50% { color: #0000ff; }
+      75% { color: #ff00ff; }
+      100% { color: #ffff00; }
+    }
+
+    /* And last but not the least THE Confetti */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background-color: red;
+      top: -10px;
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(110vh) rotate(720deg); }
+    }
+
+    .pattern {
+  white-space: pre;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+
+  /* Gradient text for ASCII art */
+  background: linear-gradient(
+    90deg,
+    #ff4d4d,
+    #ffcc00,
+    #33cc33,
+    #3399ff,
+    #cc33ff
+  );
+  
+  /* Standard + vendor prefix for text gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent; /* fallback */
+  -webkit-text-fill-color: transparent;
+
+  /* Blinking multi-color effect */
+  animation: blinkColors 2s infinite alternate, fadeIn 3s ease-in-out;
+}
+
+/* Keyframes for blinking colors */
+@keyframes blinkColors {
+  0%   { filter: drop-shadow(0 0 5px #ff4d4d); }
+  25%  { filter: drop-shadow(0 0 8px #ffcc00); }
+  50%  { filter: drop-shadow(0 0 8px #33cc33); }
+  75%  { filter: drop-shadow(0 0 8px #3399ff); }
+  100% { filter: drop-shadow(0 0 10px #cc33ff); }
+} 
+
   </style>
 </head>
 <body>
 
   <h1>🎂 Happy Birthday 🎂</h1>
-  <h2 id="click-message">👉 Click anywhere to play music 🎵</h2>
+  <!-- <h2 class="name">🎉 Prajwalika 🎉</h2> -->
+  <h2 id="click-message"> Click anywhere to play music 🎵</h2>
 
   <div class="pattern">
   
@@ -120,6 +219,36 @@
   </audio>
 
 <script>
+    // Balloon generator (random colors, sizes, speeds)
+function createBalloon() {
+  const balloon = document.createElement("div");
+  balloon.classList.add("balloon");
+
+  balloon.style.left = Math.random() * 100 + "vw";
+  balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+  balloon.style.width = 40 + Math.random() * 40 + "px";
+  balloon.style.height = 60 + Math.random() * 40 + "px";
+  balloon.style.animationDuration = (8 + Math.random() * 5) + "s";
+
+  document.body.appendChild(balloon);
+
+  setTimeout(() => balloon.remove(), 12000);
+}
+setInterval(createBalloon, 800);
+
+    // Confetti generator
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 50%)`;
+      confetti.style.animationDuration = (3 + Math.random()*3) + "s";
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 6000);
+    }
+    setInterval(createConfetti, 200);
+
     // Balloons
     function createBalloon() {
       const balloon = document.createElement("div");
