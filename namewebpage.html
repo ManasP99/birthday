@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+      background-size: 1000% 1000%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+      color: white;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Star Pattern Text (from C++ output) */
+    .pattern {
+      white-space: pre;
+      font-size: 16px;
+      line-height: 18px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50%;
+      background-color: red;
+      animation: float 10s linear infinite;
+    }
+
+    .balloon:before {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #fff;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Different balloon colors */
+    .b1 { left: 10%; background: #ff7675; animation-duration: 9s; }
+    .b2 { left: 30%; background: #55efc4; animation-duration: 11s; }
+    .b3 { left: 50%; background: #ffeaa7; animation-duration: 13s; }
+    .b4 { left: 70%; background: #74b9ff; animation-duration: 10s; }
+    .b5 { left: 90%; background: #a29bfe; animation-duration: 12s; }
+
+    /* Birthday Wish Heading */
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday 🎂</h1>
+
+  <div class="pattern">
+  
+  ****   ****    ***     ***  *   *   ***   *      *****  *   *   ***   
+  *   *  *   *  *   *     *   *   *  *   *  *        *    *  *   *   *  
+  *   *  *   *  *   *     *   *   *  *   *  *        *    * *    *   *  
+****   ****   *****     *   * * *  *****  *        *    **     *****
+*      *  *   *   *  *  *   * * *  *   *  *        *    * *    *   *
+*      *   *  *   *  *  *   ** **  *   *  *        *    *  *   *   *
+*      *   *  *   *   **    *   *  *   *  *****  *****  *   *  *   *
+
+  </div>
+
+  <!-- Floating Balloons -->
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+  <div class="balloon b5"></div>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-birthday.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
