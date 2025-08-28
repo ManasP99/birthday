@@ -112,11 +112,17 @@
   <div class="balloon b4"></div>
   <div class="balloon b5"></div>
 
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-birthday.mp3" type="audio/mp3">
+<!-- Embedded local music file -->
+  <audio id="birthday-audio" loop>
+    <source src="happy_birthday_audio.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+
+  <script>
+    document.body.addEventListener('click', function () {
+      document.getElementById('birthday-audio').play();
+    }, { once: true });
+  </script>
 
 </body>
 </html>
