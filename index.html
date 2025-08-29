@@ -1,3 +1,36 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hovering</title>
+<style>
+    .no-underline {
+    text-decoration: none;
+    color: blue; /* optional: keeps link color same as surrounding text */
+    font-weight: lighter
+  }
+   
+  button {
+    background-color: #c75757;
+    color: rgb(8, 244, 98);
+    padding: 20px;
+  }
+
+  button:hover {
+    background-color: #e90dd3; /* changes when hovered */
+  }
+</style>
+</head>
+<body>
+<h5 class="no-underline">This is a tuotorial for hovering button and also how to use style and class inside HTML without using CSS.</h5>
+<button>Hover me!</button><br><br>
+<a href="https://youtube.com/"><img src="https://youtube.com/" width="100" alt="This is YouTube directory.">YouTube</a>
+</body>
+</html> -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +69,12 @@
     /* Star Pattern Text*/
    .pattern {
      white-space: pre;
-     font-size: 16px;
+     font-size: 24px;
      line-height: 1.2;
      text-align: center;
      margin-bottom: 40px;
-     font-weight: bold;
+     font-weight: bolder;
+     text-shadow: 1px 1px 2px rgba(0,0,3,0.4);
      animation: blinkColors 2s infinite alternate;
     }
 
@@ -50,13 +84,14 @@
     }
 
     /* Balloons Design with animations*/
+    /* Balloon base */
 .balloon {
   position: absolute;
   bottom: -150px;
   width: 60px;
   height: 80px;
   border-radius: 50%;
-  animation: float 100s ease-in-out infinite;
+  animation: float s ease-in-out infinite;
   opacity: 0.95;
   box-shadow:
     inset -6px -10px 20px rgba(255,255,255,0.18), /* light top highlight */
@@ -102,16 +137,16 @@ body .balloon:nth-of-type(7n+7) {
   background: linear-gradient(180deg,#c2e9fb 0%, #7bdff6 100%);
 }
 
-/* String of balloon */
-.balloon:before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  width: 2px;
-  height: 20px;
-  background: #fff;
-}
+
+    .balloon:before {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #fff;
+    }
 
     @keyframes float {
       0% { transform: translateY(0) rotate(0); opacity: 1; }
@@ -196,7 +231,6 @@ body .balloon:nth-of-type(7n+7) {
   font-size: 16px;
   text-align: center;
   margin-bottom: 40px;
-  font-weight: bold;
 
   /* Gradient text for ASCII art */
   background: linear-gradient(
@@ -262,22 +296,20 @@ body .balloon:nth-of-type(7n+7) {
   </audio>
 
 <script>
-    // Balloon generator (random colors, sizes, speeds)
-function createBalloon() {
-  const balloon = document.createElement("div");
-  balloon.classList.add("balloon");
+      // Balloon generator
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+      balloon.style.width = 40 + Math.random()*40 + "px";
+      balloon.style.height = 60 + Math.random()*40 + "px";
+      balloon.style.animationDuration = (8 + Math.random()*5) + "s";
+      document.body.appendChild(balloon);
 
-  balloon.style.left = Math.random() * 100 + "vw";
-  balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-  balloon.style.width = 40 + Math.random() * 40 + "px";
-  balloon.style.height = 60 + Math.random() * 40 + "px";
-  balloon.style.animationDuration = (8 + Math.random() * 5) + "s";
-
-  document.body.appendChild(balloon);
-
-  setTimeout(() => balloon.remove(), 12000);
-}
-setInterval(createBalloon, 800);
+      setTimeout(() => balloon.remove(), 12000);
+    }
+    setInterval(createBalloon, 800);
 
     // Confetti generator
     function createConfetti() {
