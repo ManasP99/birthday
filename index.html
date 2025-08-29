@@ -56,8 +56,50 @@
   width: 60px;
   height: 80px;
   border-radius: 50%;
-  background-color: red;
-  animation: float 12s infinite ease-in;
+  animation: float 100s ease-in-out infinite;
+  opacity: 0.95;
+  box-shadow:
+    inset -6px -10px 20px rgba(255,255,255,0.18), /* light top highlight */
+    0 8px 18px rgba(0,0,0,0.15);                  /* outer shadow */
+  transform-origin: 50% 60%;
+}
+
+/* Glossy shine */
+.balloon::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  top: 12%;
+  width: 22%;
+  height: 28%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  filter: blur(2px);
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+/* Static color variations */
+body .balloon:nth-of-type(7n+1) {
+  background: linear-gradient(180deg,#ff7675 0%, #ff4d4d 100%);
+}
+body .balloon:nth-of-type(7n+2) {
+  background: linear-gradient(180deg,#55efc4 0%, #00c28a 100%);
+}
+body .balloon:nth-of-type(7n+3) {
+  background: linear-gradient(180deg,#ffeaa7 0%, #ffd166 100%);
+}
+body .balloon:nth-of-type(7n+4) {
+  background: linear-gradient(180deg,#74b9ff 0%, #3b82f6 100%);
+}
+body .balloon:nth-of-type(7n+5) {
+  background: linear-gradient(180deg,#a29bfe 0%, #8a6df1 100%);
+}
+body .balloon:nth-of-type(7n+6) {
+  background: linear-gradient(180deg,#f9a8d4 0%, #ff6fb3 100%);
+}
+body .balloon:nth-of-type(7n+7) {
+  background: linear-gradient(180deg,#c2e9fb 0%, #7bdff6 100%);
 }
 
 /* String of balloon */
